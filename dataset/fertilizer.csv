@@ -1,0 +1,131 @@
+Temperature,Humidity,Moisture,Soil_Type,Crop_Type,Nitrogen,Phosphorous,Potassium,Fertilizer_Name
+26,52,38,Sandy,Maize,37,0,0,Urea
+29,52,45,Loamy,Sugarcane,12,0,36,DAP
+34,65,62,Black,Cotton,7,9,9,14-35-14
+32,62,55,Red,Tobacco,37,0,0,Urea
+28,54,45,Clayey,Paddy,12,0,36,DAP
+23,53,60,Black,Wheat,7,9,9,14-35-14
+30,57,50,Sandy,Maize,37,0,0,Urea
+25,60,42,Red,Sugarcane,12,0,36,DAP
+27,65,55,Loamy,Cotton,7,9,9,14-35-14
+31,58,48,Clayey,Tobacco,37,0,0,Urea
+24,52,40,Sandy,Paddy,12,0,36,DAP
+33,68,65,Black,Wheat,7,9,9,14-35-14
+22,50,38,Red,Maize,37,0,0,Urea
+36,70,70,Loamy,Sugarcane,12,0,36,DAP
+29,55,52,Clayey,Cotton,7,9,9,14-35-14
+26,54,47,Sandy,Tobacco,37,0,0,Urea
+28,60,53,Black,Paddy,12,0,36,DAP
+31,63,58,Red,Wheat,7,9,9,14-35-14
+25,51,39,Loamy,Maize,20,20,0,20-20
+30,56,46,Clayey,Sugarcane,20,20,0,20-20
+34,66,63,Sandy,Cotton,20,20,0,20-20
+23,54,41,Black,Tobacco,20,20,0,20-20
+27,58,49,Red,Paddy,20,20,0,20-20
+32,61,56,Loamy,Wheat,20,20,0,20-20
+29,57,44,Clayey,Maize,28,28,0,28-28
+24,53,40,Sandy,Sugarcane,28,28,0,28-28
+35,69,67,Black,Cotton,28,28,0,28-28
+22,50,37,Red,Tobacco,28,28,0,28-28
+30,64,54,Loamy,Paddy,28,28,0,28-28
+33,67,62,Clayey,Wheat,28,28,0,28-28
+26,53,43,Sandy,Maize,17,17,17,17-17-17
+31,59,50,Black,Sugarcane,17,17,17,17-17-17
+28,62,57,Red,Cotton,17,17,17,17-17-17
+24,51,38,Loamy,Tobacco,17,17,17,17-17-17
+29,55,45,Clayey,Paddy,17,17,17,17-17-17
+32,64,60,Sandy,Wheat,17,17,17,17-17-17
+27,56,47,Black,Maize,0,36,0,Super Phosphate
+25,53,42,Red,Sugarcane,0,36,0,Super Phosphate
+30,60,52,Loamy,Cotton,0,36,0,Super Phosphate
+23,50,39,Clayey,Tobacco,0,36,0,Super Phosphate
+34,68,65,Sandy,Paddy,0,36,0,Super Phosphate
+31,63,59,Black,Wheat,0,36,0,Super Phosphate
+26,55,44,Red,Maize,37,0,0,Urea
+28,58,49,Loamy,Sugarcane,12,0,36,DAP
+33,66,63,Clayey,Cotton,7,9,9,14-35-14
+22,51,38,Sandy,Tobacco,37,0,0,Urea
+30,60,53,Black,Paddy,20,20,0,20-20
+24,54,41,Red,Wheat,28,28,0,28-28
+27,57,46,Loamy,Maize,17,17,17,17-17-17
+32,62,55,Clayey,Sugarcane,0,36,0,Super Phosphate
+25,52,40,Sandy,Cotton,37,0,0,Urea
+29,59,51,Black,Tobacco,12,0,36,DAP
+35,70,68,Red,Paddy,7,9,9,14-35-14
+23,50,37,Loamy,Wheat,20,20,0,20-20
+31,64,58,Clayey,Maize,28,28,0,28-28
+26,53,43,Sandy,Sugarcane,17,17,17,17-17-17
+30,61,54,Black,Cotton,0,36,0,Super Phosphate
+24,52,39,Red,Tobacco,37,0,0,Urea
+28,56,47,Loamy,Paddy,12,0,36,DAP
+33,67,64,Clayey,Wheat,7,9,9,14-35-14
+22,50,36,Sandy,Maize,20,20,0,20-20
+27,55,44,Black,Sugarcane,28,28,0,28-28
+31,62,57,Red,Cotton,17,17,17,17-17-17
+25,51,40,Loamy,Tobacco,0,36,0,Super Phosphate
+29,58,50,Clayey,Paddy,37,0,0,Urea
+34,69,66,Sandy,Wheat,12,0,36,DAP
+23,53,41,Black,Maize,7,9,9,14-35-14
+30,63,55,Red,Sugarcane,20,20,0,20-20
+26,54,45,Loamy,Cotton,28,28,0,28-28
+32,65,60,Clayey,Tobacco,17,17,17,17-17-17
+24,51,38,Sandy,Paddy,0,36,0,Super Phosphate
+28,57,48,Black,Wheat,37,0,0,Urea
+35,71,70,Red,Maize,12,0,36,DAP
+22,49,36,Loamy,Sugarcane,7,9,9,14-35-14
+31,62,56,Clayey,Cotton,20,20,0,20-20
+25,52,41,Sandy,Tobacco,28,28,0,28-28
+29,59,51,Black,Paddy,17,17,17,17-17-17
+33,66,62,Red,Wheat,0,36,0,Super Phosphate
+27,55,44,Loamy,Maize,37,0,0,Urea
+30,61,53,Clayey,Sugarcane,12,0,36,DAP
+24,52,40,Sandy,Cotton,7,9,9,14-35-14
+28,57,48,Black,Tobacco,20,20,0,20-20
+32,64,59,Red,Paddy,28,28,0,28-28
+26,53,43,Loamy,Wheat,17,17,17,17-17-17
+34,70,67,Clayey,Maize,0,36,0,Super Phosphate
+23,50,38,Sandy,Sugarcane,37,0,0,Urea
+29,58,50,Black,Cotton,12,0,36,DAP
+25,52,41,Red,Tobacco,7,9,9,14-35-14
+31,63,57,Loamy,Paddy,20,20,0,20-20
+27,55,45,Clayey,Wheat,28,28,0,28-28
+33,68,64,Sandy,Maize,17,17,17,17-17-17
+22,49,37,Black,Sugarcane,0,36,0,Super Phosphate
+30,60,52,Red,Cotton,37,0,0,Urea
+35,72,71,Loamy,Tobacco,12,0,36,DAP
+24,51,39,Clayey,Paddy,7,9,9,14-35-14
+28,56,47,Sandy,Wheat,20,20,0,20-20
+26,54,43,Black,Maize,28,28,0,28-28
+32,65,60,Red,Sugarcane,17,17,17,17-17-17
+25,52,40,Loamy,Cotton,0,36,0,Super Phosphate
+29,59,51,Clayey,Tobacco,37,0,0,Urea
+23,50,38,Sandy,Paddy,12,0,36,DAP
+34,70,67,Black,Wheat,7,9,9,14-35-14
+27,55,45,Red,Maize,20,20,0,20-20
+31,63,58,Loamy,Sugarcane,28,28,0,28-28
+24,51,40,Clayey,Cotton,17,17,17,17-17-17
+30,62,54,Sandy,Tobacco,0,36,0,Super Phosphate
+26,53,43,Black,Paddy,37,0,0,Urea
+33,68,64,Red,Wheat,12,0,36,DAP
+28,57,48,Loamy,Maize,7,9,9,14-35-14
+22,49,36,Clayey,Sugarcane,20,20,0,20-20
+35,71,70,Sandy,Cotton,28,28,0,28-28
+25,52,41,Black,Tobacco,17,17,17,17-17-17
+29,59,51,Red,Paddy,0,36,0,Super Phosphate
+32,65,60,Loamy,Wheat,37,0,0,Urea
+27,55,45,Clayey,Maize,12,0,36,DAP
+34,70,67,Sandy,Sugarcane,7,9,9,14-35-14
+23,50,38,Black,Cotton,20,20,0,20-20
+30,62,55,Red,Tobacco,28,28,0,28-28
+26,53,43,Loamy,Paddy,17,17,17,17-17-17
+31,64,58,Clayey,Wheat,0,36,0,Super Phosphate
+24,51,40,Sandy,Maize,37,0,0,Urea
+28,57,48,Black,Sugarcane,12,0,36,DAP
+33,68,65,Red,Cotton,7,9,9,14-35-14
+22,49,37,Loamy,Tobacco,20,20,0,20-20
+35,71,71,Clayey,Paddy,28,28,0,28-28
+25,52,41,Sandy,Wheat,17,17,17,17-17-17
+29,59,52,Black,Maize,0,36,0,Super Phosphate
+32,65,60,Red,Sugarcane,37,0,0,Urea
+27,55,45,Loamy,Cotton,12,0,36,DAP
+30,62,54,Clayey,Tobacco,7,9,9,14-35-14

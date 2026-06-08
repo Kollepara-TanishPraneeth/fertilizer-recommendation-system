@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+
+{% block title %}Home – Fertilizer Recommendation System{% endblock %}
+
+{% block content %}
+
+<!-- ========== HERO SECTION ========== -->
+<section class="hero-section">
+    <div class="container">
+        <span class="hero-icon">🌾</span>
+        <h1>Fertilizer Recommendation System</h1>
+        <p class="lead">
+            An AI-powered web application that recommends the most suitable fertilizer
+            for your crops using <strong>Logistic Regression</strong> — based on soil
+            nutrients and environmental conditions.
+        </p>
+        <a href="{{ url_for('predict') }}" class="hero-btn">
+            <i class="bi bi-search me-2"></i>Get Fertilizer Recommendation
+        </a>
+    </div>
+</section>
+
+<!-- ========== STATS BAR ========== -->
+<section class="stats-section">
+    <div class="container">
+        <div class="row text-center g-3">
+            <div class="col-6 col-md-3">
+                <div class="stat-box">
+                    <span class="stat-number">7</span>
+                    <span class="stat-label">Fertilizer Types</span>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-box">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">Input Features</span>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-box">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Model Accuracy</span>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-box">
+                    <span class="stat-number">130+</span>
+                    <span class="stat-label">Training Samples</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FEATURES SECTION ========== -->
+<section class="section-padding">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Key Features</h2>
+            <div class="divider"></div>
+            <p class="section-subtitle">Everything you need for accurate fertilizer recommendation</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <span class="feature-icon">🤖</span>
+                    <h5>Machine Learning Powered</h5>
+                    <p>Uses Logistic Regression algorithm trained on real agricultural data to deliver accurate fertilizer recommendations.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <span class="feature-icon">🌱</span>
+                    <h5>Crop-Specific Analysis</h5>
+                    <p>Supports 6 different crop types including Maize, Paddy, Wheat, Sugarcane, Cotton and Tobacco for targeted recommendations.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <span class="feature-icon">🏔️</span>
+                    <h5>Soil Type Detection</h5>
+                    <p>Accounts for 5 different soil types — Black, Clayey, Loamy, Red, and Sandy — for more precise recommendations.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <span class="feature-icon">🌡️</span>
+                    <h5>Environmental Factors</h5>
+                    <p>Considers temperature, humidity and moisture levels alongside soil nutrients for comprehensive analysis.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <span class="feature-icon">⚡</span>
+                    <h5>Instant Results</h5>
+                    <p>Get your fertilizer recommendation instantly with confidence score and detailed usage instructions.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <span class="feature-icon">📱</span>
+                    <h5>Responsive Design</h5>
+                    <p>Works seamlessly across all devices — desktop, tablet and mobile — built with Bootstrap 5.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== HOW IT WORKS ========== -->
+<section class="section-padding bg-light-green">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">How It Works</h2>
+            <div class="divider"></div>
+            <p class="section-subtitle">Simple 4-step process to get your recommendation</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-6 col-md-3">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h6>Enter Soil Info</h6>
+                    <p>Select your soil type and enter NPK nutrient values from your soil test report.</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h6>Choose Crop</h6>
+                    <p>Select the crop you are planning to grow in your field.</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h6>Add Environment Data</h6>
+                    <p>Enter the temperature, humidity and moisture values for your region.</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h6>Get Recommendation</h6>
+                    <p>Our ML model instantly predicts the best fertilizer for your specific conditions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a href="{{ url_for('predict') }}" class="hero-btn" style="background: #1a5c2e; color: white;">
+                <i class="bi bi-arrow-right-circle me-2"></i>Start Now — It's Free
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FERTILIZERS SECTION ========== -->
+<section class="section-padding">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Supported Fertilizers</h2>
+            <div class="divider"></div>
+            <p class="section-subtitle">Our system can recommend the following fertilizer types</p>
+        </div>
+        <div class="row g-3 justify-content-center">
+            {% set fertilizers = [
+                ('Urea', '🟡', 'High nitrogen content (46% N). Best for leafy growth.'),
+                ('DAP', '🔵', 'Di-Ammonium Phosphate. Strong root development.'),
+                ('14-35-14', '🟣', 'High phosphorus NPK blend for fruiting crops.'),
+                ('17-17-17', '🟠', 'Balanced NPK formula for general use.'),
+                ('20-20', '🟢', 'Equal N and P fertilizer for starter application.'),
+                ('28-28', '🔴', 'High-concentration N+P for deficient soils.'),
+                ('Super Phosphate', '🟤', 'Phosphorus-rich formula for root development.')
+            ] %}
+            {% for name, emoji, desc in fertilizers %}
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="feature-card" style="padding: 22px 16px;">
+                    <span style="font-size: 1.8rem;">{{ emoji }}</span>
+                    <h5 style="font-size: 1rem; margin-top: 12px; margin-bottom: 8px;">{{ name }}</h5>
+                    <p style="font-size: 0.84rem;">{{ desc }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,267 @@
+{% extends "base.html" %}
+
+{% block title %}About – Fertilizer Recommendation System{% endblock %}
+
+{% block content %}
+
+<!-- ========== PAGE HEADER ========== -->
+<section class="about-header">
+    <div class="container">
+        <h2><i class="bi bi-info-circle me-2"></i>About the Project</h2>
+        <p class="mt-2 mb-0" style="opacity:0.9;">
+            CSM355 Machine Learning Project | Lovely Professional University
+        </p>
+    </div>
+</section>
+
+<!-- ========== CONTENT ========== -->
+<section class="section-padding">
+    <div class="container">
+        <div class="row g-4">
+
+            <!-- Problem Statement -->
+            <div class="col-12">
+                <div class="about-card">
+                    <h4><i class="bi bi-exclamation-triangle me-2"></i>Problem Statement</h4>
+                    <p>
+                        Farmers in India and across the world often struggle to determine which fertilizer
+                        is most suitable for their specific soil and crop conditions. Incorrect fertilizer
+                        application leads to:
+                    </p>
+                    <ul class="mt-3">
+                        <li>Reduced crop yield and poor quality produce</li>
+                        <li>Wastage of money on unsuitable fertilizers</li>
+                        <li>Soil degradation from excess chemicals</li>
+                        <li>Environmental pollution from fertilizer runoff</li>
+                    </ul>
+                    <p class="mt-3">
+                        This project addresses this problem by building a Machine Learning-based web application
+                        that recommends the most appropriate fertilizer using Logistic Regression, based on
+                        the farmer's soil test results and environmental data.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Objectives -->
+            <div class="col-md-6">
+                <div class="about-card">
+                    <h4><i class="bi bi-bullseye me-2"></i>Objectives</h4>
+                    <ul>
+                        <li>Build a Logistic Regression model to classify the best fertilizer</li>
+                        <li>Develop a Flask-based web application for easy access</li>
+                        <li>Accept soil, crop and environmental inputs from the user</li>
+                        <li>Provide a real-time fertilizer recommendation with confidence score</li>
+                        <li>Create a user-friendly, responsive frontend using Bootstrap 5</li>
+                        <li>Evaluate model performance using accuracy and confusion matrix</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Scope -->
+            <div class="col-md-6">
+                <div class="about-card">
+                    <h4><i class="bi bi-arrows-fullscreen me-2"></i>Scope of the Project</h4>
+                    <ul>
+                        <li>Handles 7 types of fertilizers: Urea, DAP, 14-35-14, 17-17-17, 20-20, 28-28, Super Phosphate</li>
+                        <li>Supports 5 soil types: Black, Clayey, Loamy, Red, Sandy</li>
+                        <li>Supports 6 crop types: Maize, Paddy, Wheat, Sugarcane, Cotton, Tobacco</li>
+                        <li>Processes 8 input features per prediction</li>
+                        <li>Deployable locally or on cloud platforms</li>
+                        <li>Extendable with more crop/fertilizer types in the future</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Dataset Description -->
+            <div class="col-12">
+                <div class="about-card">
+                    <h4><i class="bi bi-database me-2"></i>Dataset Description</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>The dataset used in this project contains agricultural records with soil nutrient levels,
+                            environmental measurements, and corresponding fertilizer labels. It was created for
+                            educational purposes based on common agricultural standards.</p>
+                            <p><strong>Dataset Size:</strong> 130 records</p>
+                            <p><strong>File Format:</strong> CSV (fertilizer.csv)</p>
+                        </div>
+                        <div class="col-md-6">
+                            <table class="table table-sm table-bordered" style="font-size:0.88rem;">
+                                <thead class="table-success">
+                                    <tr>
+                                        <th>Feature</th>
+                                        <th>Type</th>
+                                        <th>Range</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Temperature</td><td>Numeric</td><td>22–36 °C</td></tr>
+                                    <tr><td>Humidity</td><td>Numeric</td><td>49–72 %</td></tr>
+                                    <tr><td>Moisture</td><td>Numeric</td><td>36–71 %</td></tr>
+                                    <tr><td>Soil_Type</td><td>Categorical</td><td>5 types</td></tr>
+                                    <tr><td>Crop_Type</td><td>Categorical</td><td>6 types</td></tr>
+                                    <tr><td>Nitrogen (N)</td><td>Numeric</td><td>0–37</td></tr>
+                                    <tr><td>Phosphorous (P)</td><td>Numeric</td><td>0–36</td></tr>
+                                    <tr><td>Potassium (K)</td><td>Numeric</td><td>0–36</td></tr>
+                                    <tr><td>Fertilizer_Name</td><td>Target</td><td>7 classes</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Logistic Regression Explanation -->
+            <div class="col-12">
+                <div class="about-card">
+                    <h4><i class="bi bi-graph-up me-2"></i>Why Logistic Regression?</h4>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <p>
+                                <strong>Logistic Regression</strong> is a supervised Machine Learning algorithm
+                                used for classification problems. Even though the name contains "regression",
+                                it is actually used to predict categories (classes), not continuous values.
+                            </p>
+                            <p>
+                                It works by calculating the probability that an input belongs to each category,
+                                then assigning the category with the highest probability as the output.
+                                For multi-class problems like fertilizer recommendation, it uses a technique called
+                                <em>softmax</em> to handle all classes simultaneously.
+                            </p>
+                            <p><strong>Why it is suitable for this project:</strong></p>
+                            <ul>
+                                <li>Simple, fast and easy to interpret</li>
+                                <li>Works well for multi-class classification</li>
+                                <li>Performs well on structured/tabular datasets</li>
+                                <li>Does not require heavy computational resources</li>
+                                <li>Ideal for beginner-level academic ML projects</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-5">
+                            <div style="background:#f0faf4; border-radius:12px; padding:20px; border:1px solid #c3e6cb;">
+                                <p class="fw-bold text-success mb-2">📐 Core Formula (Sigmoid)</p>
+                                <div style="background:#fff; border-radius:8px; padding:12px; text-align:center; font-size:1.1rem; font-family:monospace; border:1px solid #ddd;">
+                                    P(y=1) = 1 / (1 + e<sup>−z</sup>)
+                                </div>
+                                <p class="mt-3 mb-1" style="font-size:0.88rem; color:#555;">Where z = w₁x₁ + w₂x₂ + ... + b</p>
+                                <hr>
+                                <p class="mb-1" style="font-size:0.88rem;"><strong>Model Parameters:</strong></p>
+                                <ul style="font-size:0.85rem; color:#555;">
+                                    <li>Solver: lbfgs</li>
+                                    <li>Max Iterations: 1000</li>
+                                    <li>Train/Test Split: 80/20</li>
+                                    <li>Cross Validation: 5-Fold</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology Stack -->
+            <div class="col-md-6">
+                <div class="about-card">
+                    <h4><i class="bi bi-stack me-2"></i>Technology Stack</h4>
+                    <p><strong>Backend:</strong></p>
+                    <div class="mb-3">
+                        <span class="tech-badge">🐍 Python 3.x</span>
+                        <span class="tech-badge">🌶️ Flask</span>
+                    </div>
+                    <p><strong>Machine Learning:</strong></p>
+                    <div class="mb-3">
+                        <span class="tech-badge">🤖 Scikit-learn</span>
+                        <span class="tech-badge">🐼 Pandas</span>
+                        <span class="tech-badge">🔢 NumPy</span>
+                        <span class="tech-badge">📦 Pickle</span>
+                    </div>
+                    <p><strong>Frontend:</strong></p>
+                    <div>
+                        <span class="tech-badge">🌐 HTML5</span>
+                        <span class="tech-badge">🎨 CSS3</span>
+                        <span class="tech-badge">📱 Bootstrap 5</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workflow -->
+            <div class="col-md-6">
+                <div class="about-card">
+                    <h4><i class="bi bi-diagram-3 me-2"></i>System Workflow</h4>
+                    <div class="workflow-step">
+                        <div class="workflow-num">1</div>
+                        <div class="workflow-text">
+                            <h6>Data Collection</h6>
+                            <p>Load the fertilizer.csv dataset containing soil, crop and environmental data.</p>
+                        </div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="workflow-num">2</div>
+                        <div class="workflow-text">
+                            <h6>Data Preprocessing</h6>
+                            <p>Handle missing values and apply Label Encoding to categorical features.</p>
+                        </div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="workflow-num">3</div>
+                        <div class="workflow-text">
+                            <h6>Model Training</h6>
+                            <p>Train Logistic Regression on 80% of the data using scikit-learn.</p>
+                        </div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="workflow-num">4</div>
+                        <div class="workflow-text">
+                            <h6>Model Evaluation</h6>
+                            <p>Evaluate using accuracy score, confusion matrix and 5-fold cross validation.</p>
+                        </div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="workflow-num">5</div>
+                        <div class="workflow-text">
+                            <h6>Deployment</h6>
+                            <p>Save model with pickle and deploy via Flask web application.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Model Evaluation -->
+            <div class="col-12">
+                <div class="about-card">
+                    <h4><i class="bi bi-bar-chart-fill me-2"></i>Model Evaluation Metrics</h4>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div style="background:#e8f5e9; border-radius:12px; padding:20px; text-align:center;">
+                                <div style="font-size:2.5rem; font-weight:800; color:#1a5c2e;">100%</div>
+                                <div style="font-weight:600; color:#27ae60;">Accuracy Score</div>
+                                <p style="font-size:0.83rem; color:#555; margin-top:8px;">
+                                    Percentage of correctly classified fertilizer recommendations on the test set.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div style="background:#e3f2fd; border-radius:12px; padding:20px; text-align:center;">
+                                <div style="font-size:2.5rem; font-weight:800; color:#1565c0;">5-Fold</div>
+                                <div style="font-weight:600; color:#1976d2;">Cross Validation</div>
+                                <p style="font-size:0.83rem; color:#555; margin-top:8px;">
+                                    Model tested on 5 different data splits to verify consistent performance.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div style="background:#f3e5f5; border-radius:12px; padding:20px; text-align:center;">
+                                <div style="font-size:2.5rem; font-weight:800; color:#6a1b9a;">1.00</div>
+                                <div style="font-weight:600; color:#8e24aa;">F1 Score</div>
+                                <p style="font-size:0.83rem; color:#555; margin-top:8px;">
+                                    Harmonic mean of precision and recall. 1.00 means perfect classification.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /row -->
+    </div>
+</section>
+
+{% endblock %}

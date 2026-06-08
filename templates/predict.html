@@ -1,0 +1,261 @@
+{% extends "base.html" %}
+
+{% block title %}Predict – Fertilizer Recommendation System{% endblock %}
+
+{% block content %}
+
+<!-- ========== PAGE HEADER ========== -->
+<section class="predict-header">
+    <div class="container">
+        <h2><i class="bi bi-search me-2"></i>Get Fertilizer Recommendation</h2>
+        <p class="mt-2 mb-0" style="opacity:0.9;">
+            Fill in the details below to receive an AI-powered fertilizer recommendation
+        </p>
+    </div>
+</section>
+
+<!-- ========== PREDICTION FORM ========== -->
+<section class="section-padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9 col-xl-8">
+
+                <!-- Error Alert -->
+                {% if error %}
+                <div class="alert-danger-custom mb-4">
+                    <i class="bi bi-exclamation-triangle-fill me-2"></i>{{ error }}
+                </div>
+                {% endif %}
+
+                <div class="predict-card">
+                    <form action="{{ url_for('predict') }}" method="POST" id="predictForm" novalidate>
+
+                        <!-- ---- SECTION 1: Crop & Soil ---- -->
+                        <div class="form-section-title">
+                            <i class="bi bi-tree me-2"></i>Section 1 — Crop & Soil Information
+                        </div>
+
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-6">
+                                <label class="form-label" for="soil_type">
+                                    Soil Type <span class="text-danger">*</span>
+                                </label>
+                                <select class="form-select" id="soil_type" name="soil_type" required>
+                                    <option value="" disabled selected>— Select Soil Type —</option>
+                                    {% for soil in soil_types %}
+                                    <option value="{{ soil }}">{{ soil }}</option>
+                                    {% endfor %}
+                                </select>
+                                <div class="input-hint">The type of soil in your field</div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label" for="crop_type">
+                                    Crop Type <span class="text-danger">*</span>
+                                </label>
+                                <select class="form-select" id="crop_type" name="crop_type" required>
+                                    <option value="" disabled selected>— Select Crop Type —</option>
+                                    {% for crop in crop_types %}
+                                    <option value="{{ crop }}">{{ crop }}</option>
+                                    {% endfor %}
+                                </select>
+                                <div class="input-hint">The crop you are planning to grow</div>
+                            </div>
+                        </div>
+
+                        <!-- ---- SECTION 2: Environmental Conditions ---- -->
+                        <div class="form-section-title">
+                            <i class="bi bi-thermometer-half me-2"></i>Section 2 — Environmental Conditions
+                        </div>
+
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-4">
+                                <label class="form-label" for="temperature">
+                                    Temperature (°C) <span class="text-danger">*</span>
+                                </label>
+                                <input type="number"
+                                       class="form-control"
+                                       id="temperature"
+                                       name="temperature"
+                                       placeholder="e.g. 26"
+                                       min="0" max="60" step="0.1"
+                                       required>
+                                <div class="input-hint">Range: 0 – 60 °C</div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label" for="humidity">
+                                    Humidity (%) <span class="text-danger">*</span>
+                                </label>
+                                <input type="number"
+                                       class="form-control"
+                                       id="humidity"
+                                       name="humidity"
+                                       placeholder="e.g. 52"
+                                       min="0" max="100" step="0.1"
+                                       required>
+                                <div class="input-hint">Range: 0 – 100 %</div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label" for="moisture">
+                                    Moisture (%) <span class="text-danger">*</span>
+                                </label>
+                                <input type="number"
+                                       class="form-control"
+                                       id="moisture"
+                                       name="moisture"
+                                       placeholder="e.g. 38"
+                                       min="0" max="100" step="0.1"
+                                       required>
+                                <div class="input-hint">Range: 0 – 100 %</div>
+                            </div>
+                        </div>
+
+                        <!-- ---- SECTION 3: Soil Nutrients ---- -->
+                        <div class="form-section-title">
+                            <i class="bi bi-droplet-half me-2"></i>Section 3 — Soil Nutrient Levels (NPK)
+                        </div>
+
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-4">
+                                <label class="form-label" for="nitrogen">
+                                    Nitrogen — N <span class="text-danger">*</span>
+                                </label>
+                                <input type="number"
+                                       class="form-control"
+                                       id="nitrogen"
+                                       name="nitrogen"
+                                       placeholder="e.g. 37"
+                                       min="0" max="140" step="1"
+                                       required>
+                                <div class="input-hint">Range: 0 – 140 (kg/ha)</div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label" for="phosphorous">
+                                    Phosphorous — P <span class="text-danger">*</span>
+                                </label>
+                                <input type="number"
+                                       class="form-control"
+                                       id="phosphorous"
+                                       name="phosphorous"
+                                       placeholder="e.g. 0"
+                                       min="0" max="145" step="1"
+                                       required>
+                                <div class="input-hint">Range: 0 – 145 (kg/ha)</div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label" for="potassium">
+                                    Potassium — K <span class="text-danger">*</span>
+                                </label>
+                                <input type="number"
+                                       class="form-control"
+                                       id="potassium"
+                                       name="potassium"
+                                       placeholder="e.g. 0"
+                                       min="0" max="205" step="1"
+                                       required>
+                                <div class="input-hint">Range: 0 – 205 (kg/ha)</div>
+                            </div>
+                        </div>
+
+                        <!-- ---- NPK Info Box ---- -->
+                        <div style="background:#e8f5e9; border-radius:10px; padding:14px 18px; margin-bottom:28px; font-size:0.88rem; color:#2d5a3d;">
+                            <i class="bi bi-lightbulb me-2"></i>
+                            <strong>Tip:</strong> NPK values can be obtained from your soil test report.
+                            N = Nitrogen (for leaf growth), P = Phosphorous (for roots & flowering),
+                            K = Potassium (for overall crop health).
+                        </div>
+
+                        <!-- ---- SUBMIT BUTTON ---- -->
+                        <div class="text-center">
+                            <button type="submit" class="btn-predict" id="submitBtn">
+                                <i class="bi bi-cpu me-2"></i>Predict Best Fertilizer
+                            </button>
+                            <div style="margin-top:12px; font-size:0.85rem; color:#888;">
+                                <i class="bi bi-shield-check me-1"></i>
+                                All fields are required. Results are AI-generated recommendations.
+                            </div>
+                        </div>
+
+                    </form>
+                </div><!-- /predict-card -->
+
+                <!-- Sample Values Help Box -->
+                <div class="about-card mt-4">
+                    <h4 style="font-size:1rem;"><i class="bi bi-question-circle me-2"></i>Sample Input Values (for testing)</h4>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-hover" style="font-size:0.87rem;">
+                            <thead class="table-success">
+                                <tr>
+                                    <th>Soil</th><th>Crop</th><th>Temp</th><th>Humidity</th>
+                                    <th>Moisture</th><th>N</th><th>P</th><th>K</th>
+                                    <th>Expected</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Sandy</td><td>Maize</td><td>26</td><td>52</td>
+                                    <td>38</td><td>37</td><td>0</td><td>0</td>
+                                    <td><span class="badge bg-success">Urea</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Loamy</td><td>Sugarcane</td><td>29</td><td>52</td>
+                                    <td>45</td><td>12</td><td>0</td><td>36</td>
+                                    <td><span class="badge bg-primary">DAP</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Black</td><td>Cotton</td><td>34</td><td>65</td>
+                                    <td>62</td><td>7</td><td>9</td><td>9</td>
+                                    <td><span class="badge bg-purple" style="background:#8e44ad;">14-35-14</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Red</td><td>Wheat</td><td>27</td><td>55</td>
+                                    <td>45</td><td>20</td><td>20</td><td>0</td>
+                                    <td><span class="badge bg-warning text-dark">20-20</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div><!-- /col -->
+        </div><!-- /row -->
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    // Basic client-side validation before form submit
+    document.getElementById('predictForm').addEventListener('submit', function(e) {
+        const fields = ['soil_type', 'crop_type', 'temperature', 'humidity',
+                        'moisture', 'nitrogen', 'phosphorous', 'potassium'];
+        let allFilled = true;
+
+        fields.forEach(function(id) {
+            const el = document.getElementById(id);
+            if (!el.value || el.value.trim() === '' || el.value === '') {
+                el.style.borderColor = '#e74c3c';
+                allFilled = false;
+            } else {
+                el.style.borderColor = '#27ae60';
+            }
+        });
+
+        if (!allFilled) {
+            e.preventDefault();
+            alert('⚠️ Please fill in all fields before submitting.');
+        } else {
+            // Change button to loading state
+            const btn = document.getElementById('submitBtn');
+            btn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Analyzing...';
+            btn.style.opacity = '0.8';
+            btn.disabled = true;
+        }
+    });
+</script>
+{% endblock %}

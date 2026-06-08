@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+
+{% block title %}Result – Fertilizer Recommendation System{% endblock %}
+
+{% block content %}
+
+<!-- ========== PAGE HEADER ========== -->
+<section class="result-header">
+    <div class="container">
+        <h2><i class="bi bi-check-circle me-2"></i>Recommendation Result</h2>
+        <p class="mt-2 mb-0" style="opacity:0.9;">
+            Based on your inputs, our AI model recommends:
+        </p>
+    </div>
+</section>
+
+<!-- ========== RESULT CONTENT ========== -->
+<section class="section-padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9 col-xl-8">
+
+                <!-- ---- MAIN RESULT CARD ---- -->
+                <div class="result-card mb-4">
+
+                    <!-- Success Icon -->
+                    <div style="font-size:3.5rem; margin-bottom:8px;">✅</div>
+                    <h4 style="color:#555; font-size:1.1rem; font-weight:500;">
+                        Recommended Fertilizer for Your Crop
+                    </h4>
+
+                    <!-- Fertilizer Name Badge -->
+                    <div class="result-fertilizer-badge"
+                         style="background: {{ fert_info.get('color', '#27ae60') }};">
+                        🌿 {{ fertilizer }}
+                    </div>
+
+                    <!-- Confidence Score -->
+                    <div style="margin: 10px 0 20px;">
+                        <p style="font-size:0.92rem; color:#666; margin-bottom:6px;">
+                            <i class="bi bi-speedometer2 me-1"></i>
+                            Model Confidence: <strong>{{ confidence }}%</strong>
+                        </p>
+                        <div class="confidence-bar-wrapper">
+                            <div class="confidence-bar-fill" style="width: {{ confidence }}%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Fertilizer Description -->
+                    <div class="fert-description-box">
+                        <h6><i class="bi bi-info-circle me-2"></i>About {{ fertilizer }}</h6>
+                        <p>{{ fert_info.get('description', '') }}</p>
+                    </div>
+
+                    <!-- Usage Instructions -->
+                    <div class="fert-description-box" style="background:#fff8e1; border-color:#ffe082;">
+                        <h6 style="color:#e67e22;"><i class="bi bi-tools me-2"></i>How to Use</h6>
+                        <p>{{ fert_info.get('usage', '') }}</p>
+                    </div>
+
+                    <!-- Disclaimer -->
+                    <div style="background:#f8f9fa; border-radius:10px; padding:12px 16px; margin-bottom:22px; font-size:0.83rem; color:#777; border-left:3px solid #dee2e6;">
+                        <i class="bi bi-exclamation-circle me-1"></i>
+                        <strong>Disclaimer:</strong> This recommendation is AI-generated based on the provided inputs.
+                        Please consult a certified agronomist before applying fertilizers to your crops.
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="d-flex gap-3 justify-content-center flex-wrap">
+                        <a href="{{ url_for('predict') }}" class="btn-back">
+                            <i class="bi bi-arrow-left me-2"></i>Try Another Prediction
+                        </a>
+                        <a href="{{ url_for('home') }}" class="btn-home">
+                            <i class="bi bi-house me-2"></i>Back to Home
+                        </a>
+                    </div>
+
+                </div><!-- /result-card -->
+
+                <!-- ---- INPUT SUMMARY CARD ---- -->
+                <div class="about-card">
+                    <h4 style="font-size:1.1rem;">
+                        <i class="bi bi-clipboard-data me-2"></i>Your Input Summary
+                    </h4>
+                    <p style="font-size:0.9rem; color:#888; margin-bottom:18px;">
+                        These are the values you entered for the prediction:
+                    </p>
+                    <table class="input-summary-table">
+                        {% for key, value in user_inputs.items() %}
+                        <tr>
+                            <td>{{ key }}</td>
+                            <td>{{ value }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div><!-- /input-summary-card -->
+
+                <!-- ---- NPK VISUAL BARS ---- -->
+                <div class="about-card mt-4">
+                    <h4 style="font-size:1.1rem;">
+                        <i class="bi bi-bar-chart-line me-2"></i>NPK Nutrient Overview
+                    </h4>
+                    <p style="font-size:0.88rem; color:#888; margin-bottom:18px;">
+                        Visual representation of your entered NPK values
+                    </p>
+
+                    {% set n_val = user_inputs['Nitrogen (N)'] | float %}
+                    {% set p_val = user_inputs['Phosphorous (P)'] | float %}
+                    {% set k_val = user_inputs['Potassium (K)'] | float %}
+
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span style="font-weight:600; font-size:0.9rem; color:#1a5c2e;">
+                                Nitrogen (N)
+                            </span>
+                            <span style="font-size:0.9rem; color:#555;">{{ n_val }} kg/ha</span>
+                        </div>
+                        <div style="background:#e8f5e9; border-radius:50px; height:14px; overflow:hidden;">
+                            <div style="width:{{ [n_val/140*100, 100] | min }}%; height:100%; border-radius:50px;
+                                        background: linear-gradient(90deg, #1a5c2e, #27ae60);"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span style="font-weight:600; font-size:0.9rem; color:#1565c0;">
+                                Phosphorous (P)
+                            </span>
+                            <span style="font-size:0.9rem; color:#555;">{{ p_val }} kg/ha</span>
+                        </div>
+                        <div style="background:#e3f2fd; border-radius:50px; height:14px; overflow:hidden;">
+                            <div style="width:{{ [p_val/145*100, 100] | min }}%; height:100%; border-radius:50px;
+                                        background: linear-gradient(90deg, #1565c0, #42a5f5);"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-2">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span style="font-weight:600; font-size:0.9rem; color:#6a1b9a;">
+                                Potassium (K)
+                            </span>
+                            <span style="font-size:0.9rem; color:#555;">{{ k_val }} kg/ha</span>
+                        </div>
+                        <div style="background:#f3e5f5; border-radius:50px; height:14px; overflow:hidden;">
+                            <div style="width:{{ [k_val/205*100, 100] | min }}%; height:100%; border-radius:50px;
+                                        background: linear-gradient(90deg, #6a1b9a, #ab47bc);"></div>
+                        </div>
+                    </div>
+                </div><!-- /npk bars -->
+
+            </div><!-- /col -->
+        </div><!-- /row -->
+    </div>
+</section>
+
+{% endblock %}
